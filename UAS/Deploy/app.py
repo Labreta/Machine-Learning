@@ -15,6 +15,7 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict():
     float_features = [float(x) for x in request.form.values()]
+#     Coba disini jangan pakai array lagi (nggak usah pakai np.array and []) cukup dengan float_features saja
     feature = [np.array(float_features)]
     prediction = model.predict(feature)
     return render_template("index.html", prediction_text = "{}".format(prediction))
