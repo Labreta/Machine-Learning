@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+
+    <div class="container form">
+        <form action="{{url_for('predict')}}" method="post">
+            <h1>Online or Offline are you?</h1>
+           <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Universitas" class="form-control">
+                            <option value="" disabled selected style="display: none;">Universitas</option>
+                            <option value="Universitas Internasional Batam">Universitas Internasional Batam</option>
+                            <option value="Institut Teknologi Batam">Institut Teknologi Batam</option>
+                            <option value="Universitas Putera Batam">Universitas Putera Batam</option>
+                            <option value="Universitas Universal">Universitas Universal</option>
+                            <option value="Politeknik Batam">Politeknik Batam</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Jenis_Prodi" class="form-control">
+                            <option value="" disabled selected style="display: none;">Jenis Program Studi</option>
+                            <option value="Computing & Engineering">Computing & Engineering</option>
+                            <option value="Non Computing & Non Engineering">Non Computing & Non Engineering</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Kualitas_Dosen" class="form-control">    
+                            <option value="" disabled selected style="display: none;">Kualitas Dosen Online</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Kepuasan" class="form-control">
+                            <option value="" disabled selected style="display: none;">Kepuasan Terhadap Infrastruktur Online</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Keluhan_Fisik" class="form-control">
+                            <option value="" disabled selected style="display: none;">Keluhan Fisik Selama Pembelajaran Online</option>
+                            <option value="Kelelahan Mata">Kelelahan Mata</option>
+                            <option value="Sakit Kepala">Sakit Kepala</option>
+                            <option value="Sering Mengantuk">Sering Mengantuk</option>
+                            <option value="Badan Pegal">Badan Pegal</option>
+                            <option value="Sulit Beristirahat">Sulit Beristirahat</option>
+                            <option value="Tidak Enak Badan">Tidak Enak Badan</option>
+                            <option value="Tidak Ada Keluhan / Tidak Ada Diatas">Tidak Ada Keluhan / Tidak Ada Diatas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Kendala" class="form-control">
+                            <option value="" disabled selected style="display: none;">Kendala Selama Pembelajaran Online</option>
+                            <option value="Kendala Internet">Kendala Internet</option>
+                            <option value="Kendala Listrik">Kendala Listrik</option>
+                            <option value="Kendala Perangkat">Kendala Perangkat</option>
+                            <option value="Tidak Ada Kendala / Tidak Ada Diatas">Tidak Ada Kendala / Tidak Ada Diatas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Performa_Akademik" class="form-control">
+                            <option value="" disabled selected style="display: none;">Performa Akademik Selama Pembelajaran Online</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="" class="dropdown" type="text" name="Keluhan_Psikis" class="form-control">
+                            <option value="" disabled selected style="display: none;">Keluhan Psikis Selama Pembelajaran online</option>
+                            <option value="Bosan">Bosan</option>
+                            <option value="Stress">Stress</option>
+                            <option value="Cemas">Cemas</option>
+                            <option value="Moody-an">Moody-an</option>
+                            <option value="Patah Hati">Patah Hati</option>
+                            <option value="Depresi">Depresi</option>
+                            <option value="Tidak Ada Keluhan / Tidak Ada Diatas">Tidak Ada Keluhan / Tidak Ada Diatas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class"btnSubmit">Submit</button>
+                    </div>
+                </div>
+                <div class="output">
+                    <h3>Kamu lebih cocok belajar </h3>
+                    {{ prediction_text }}
+                </div>
+            </div>
+        </form>
+    </div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
