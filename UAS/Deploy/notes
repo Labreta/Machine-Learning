@@ -1,0 +1,6 @@
+Di app.py sebelum predict semua yang string valuenya harus diconvert jadi int or float dulu caranya ada 2
+
+1. Ganti valuenya di form index.html sesuaikan dengan hasil labelling kemarin
+2. Tambah function untuk labelling datanya sama kayak kemarin
+
+Untuk predictnya sesuainya notesnya nggak berubah tapi kalau masih ada masalah coba pakai antara np.array atau [] saja jangan dua duanya
