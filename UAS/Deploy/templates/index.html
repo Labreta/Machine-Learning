@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <div class="title">
+            <h1>Online or Offline</h1>
+        </div>
+
+        <div class="form">
+
+            <form action="{{url_for('predict')}}" method="post" id="form">
+                
+                <div class="input">
+
+                    <div class="row">
+    
+                        <div class="input-field">
+                            <label for="asal-universitas">Asal universitas</label>
+                            <select name="Universitas" id="asal-universitas" required>
+                                <option selected hidden value="">Pilih universitas</option>
+                                <option value="2">Universitas Internasional Batam</option>
+                                <option value="0">Institut Teknologi Batam</option>
+                                <option value="3">Universitas Putera Batam</option>
+                                <option value="4">Universitas Universal</option>
+                                <option value="1">Politeknik Negeri Batam</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="program-studi">Program studi</label>
+                            <select name="Jenis_Program_Studi" id="program-studi" required>
+                                <option selected hidden value="">Pilih program studi</option>
+                                <option value="0">Computing & Engineering</option>
+                                <option value="1">Non Computing & Engineering</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+    
+                    <div class="row">
+    
+                        <div class="input-field">
+                            <label for="kualitas-dosen">Kualitas dosen</label>
+                            <select name="Kualitas_Dosen" id="kualitas-dosen" required>
+                                <option selected hidden value="">Pilih kualitas</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+    
+                        <div class="input-field">
+                            <label for="performa-akademik">Performa akademik</label>
+                            <select name="Performa_Akademik" id="performa-akademik" required>
+                                <option selected hidden value="">Pilih performa</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+    
+                    </div>
+                    
+                    <div class="row">
+    
+                        <div class="input-field">
+                            <label for="tingkat-kepuasan-infrastruktur">Tingkat kepuasan infrastruktur online</label>
+                            <select name="Kepuasan_Infrastruktur" id="tingkat-kepuasan-infrastruktur" required>
+                                <option selected hidden value="">Pilih kepuasan</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="kendala-pembelajaran">Kendala pembelajaran</label>
+                            <select name="Kendala_Online" id="kendala-pembelajaran" required>
+                                <option selected hidden value="">Pilih kendala</option>
+                                <option value="1">Kendala internet</option>
+                                <option value="2">Kendala listrik</option>
+                                <option value="3">Kendala perangkat</option>
+                                <option value="4">Tidak ada kendala / tidak ada diatas</option>
+                            </select>
+                        </div>
+    
+                    </div>
+    
+                    <div class="row">
+    
+                        <div class="input-field">
+                            <label for="keluhan-fisik">Keluhan fisik</label>
+                            <select name="Keluhan_Fisik" id="keluhan-fisik" required>
+                                <option selected hidden value="">Pilih keluhan</option>
+                                <option value="1">Kelelahan mata</option>
+                                <option value="10">Sakit kepala</option>
+                                <option value="14">Sering mengantuk</option>
+                                <option value="0">Badan pegal</option>
+                                <option value="17">Sulit istirahat</option>
+                                <option value="20">Tidak enak badan</option>
+                                <option value="19">Tidak ada keluhan / tidak ada diatas</option>
+                            </select>
+                        </div>
+        
+                        <div class="input-field">
+                            <label for="keluhan-psikis">Keluhan psikis</label>
+                            <select name="Keluhan_Psikis" id="keluhan-psikis" required>
+                                <option selected hidden value="">Pilih keluhan</option>
+                                <option value="0">Bosan</option>
+                                <option value="16">Stress</option>
+                                <option value="8">Cemas</option>
+                                <option value="12">Moody-an</option>
+                                <option value="15">Patah hati</option>
+                                <option value="11">Depresi</option>
+                                <option value="17">Tidak ada keluhan / tidak ada diatas</option>
+                            </select>
+                        </div>
+    
+                    </div>
+
+                </div>
+                
+                <div class="button">
+                    <button type="submit" class="button-submit">Submit</button>
+                </div>
+    
+            </form>
+            
+        </div>
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <script>
+        
+        const value = Number('{{ prediction_text }}');
+        if (value > 0) {
+            const form = document.querySelector("#form");
+            form.onsubmit = submit();
+            
+            function submit() {
+                let result = '';
+                if (value == 1) {
+                    result = 'Kamu sangat cocok dengan pembelajaran offline';
+                } else if (value == 2) {
+                    result = 'Kamu cocok dengan pembelajaran offline';
+                } else if (value == 3) {
+                    result = 'Kamu cocok dengan pembelajaran offline maupun online';
+                } else if (value == 4) {
+                    result = 'Kamu cocok dengan pembelajaran online';
+                } else if (value == 5) {
+                    result = 'Kamu sangat cocok dengan pembelajaran online';
+                };
+
+                Swal.fire(
+                'Hasil',
+                `${result}`,
+                'success'
+                );
+                console.log(result)
+            }
+        }
+        
+</script>
+</body>
+</html>
