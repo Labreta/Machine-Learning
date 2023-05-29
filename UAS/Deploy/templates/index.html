@@ -111,12 +111,12 @@
                             <select name="Keluhan_Fisik" id="keluhan-fisik" required>
                                 <option selected hidden value="">Pilih keluhan</option>
                                 <option value="1">Kelelahan mata</option>
-                                <option value="10">Sakit kepala</option>
-                                <option value="14">Sering mengantuk</option>
+                                <option value="2">Sakit kepala</option>
+                                <option value="3">Sering mengantuk</option>
                                 <option value="0">Badan pegal</option>
-                                <option value="17">Sulit istirahat</option>
-                                <option value="20">Tidak enak badan</option>
-                                <option value="19">Tidak ada keluhan / tidak ada diatas</option>
+                                <option value="4">Sulit istirahat</option>
+                                <option value="6">Tidak enak badan</option>
+                                <option value="5">Tidak ada keluhan / tidak ada diatas</option>
                             </select>
                         </div>
         
@@ -125,12 +125,12 @@
                             <select name="Keluhan_Psikis" id="keluhan-psikis" required>
                                 <option selected hidden value="">Pilih keluhan</option>
                                 <option value="0">Bosan</option>
-                                <option value="16">Stress</option>
-                                <option value="8">Cemas</option>
-                                <option value="12">Moody-an</option>
-                                <option value="15">Patah hati</option>
-                                <option value="11">Depresi</option>
-                                <option value="17">Tidak ada keluhan / tidak ada diatas</option>
+                                <option value="5">Stress</option>
+                                <option value="1">Cemas</option>
+                                <option value="3">Moody-an</option>
+                                <option value="4">Patah hati</option>
+                                <option value="2">Depresi</option>
+                                <option value="6">Tidak ada keluhan / tidak ada diatas</option>
                             </select>
                         </div>
     
@@ -139,7 +139,7 @@
                 </div>
                 
                 <div class="button">
-                    <button type="submit" class="button-submit">Submit</button>
+                    <button type="submit" class="button-submit" onclick="backHome()">Submit</button>
                 </div>
     
             </form>
@@ -170,13 +170,20 @@
                     result = 'Kamu sangat cocok dengan pembelajaran online';
                 };
 
-                Swal.fire(
-                'Hasil',
-                `${result}`,
-                'success'
-                );
-                console.log(result)
+                Swal.fire({
+                    title: 'Hasil',
+                    text: `${result}`,
+                    confirmButtonText: 'OK',
+                    icon: 'success'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/";
+                        }
+                    })
             }
+        }
+        function backHome(){
+            window.location.href("http://127.0.0.1:5000/")
         }
         
 </script>
