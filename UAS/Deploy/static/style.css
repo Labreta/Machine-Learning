@@ -1,70 +1,106 @@
-body{
-    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-.form{
-    position: relative;
-    background: #fff;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    width: 70%;
-    left: 15%;
-    bottom: 50px;
+
+body {
+    min-height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF2CC;
 }
-.form .form-control{
-    border-radius:1rem;
-    padding: 10px;
-    margin: 5px;
-    width: 300px;
+
+div.container {
+    max-width: 900px;
+    width: 100%;
+    padding: 1em;
+    background-color: #FFF;
+    border-radius: 0.8em;
 }
-.form .dropdown{
-    border-radius:1rem;
-    padding: 10px;
-    margin: 5px;
-    width: 320px;
-}
-.image img{
-    border-radius: 6rem;
-    width: 11%;
-    margin-top: -3%;
-    transform: rotate(29deg);
-}
-.form form{
-    padding: 14%;
-}
-.form form .row{
-    margin-bottom: -7%;
-}
-.form h1{
-    margin-bottom: 8%;
-    margin-top: -10%;
+
+div.container div.title {
+    font-size: 1.5em;
+    font-weight: 500;
     text-align: center;
-    color: #0062cc;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #DFA67B;
 }
-.form .btnContact {
-    width: 50%;
-    border: none;
-    border-radius: 1rem;
-    padding: 1.5%;
-    background: #dc3545;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
+
+div.container div.form form {
+    padding: 10px 15px;
 }
-.btnSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    color: #fff;
-    background-color: #0062cc;
+
+div.container div.form div.input div.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 12px 0;
+}    
+
+div.container div.form div.input div.row div.input-field {
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 5px;
+}
+
+div.container div.form div.input div.row div.input-field label {
+    font-weight: 500;
+}
+
+div.container div.form div.input div.row div.input-field select {
+    display: block;
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+div.container div.form div.input div.row div.input-field select:focus {
+    border-color: #DFA67B;
+}
+
+div.container div.form form div.button {
+    height: 45px;
+    margin-top: 30px;
+}
+div.container div.form form div.button button{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    color: #FFF;
     border: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #F4B183;
     cursor: pointer;
 }
 
-.output h3{
-    position: relative;
-    left: 450px;
-    bottom: 480px;
-    font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 584px) {
+    div.container {
+        max-width: 100%;
+    }
+
+    div.container div.form div.input {
+        max-height: 600px;
+        overflow-y: scroll;
+    }
+
+    div.container div.form div.input div.row {
+        flex-direction: column;
+    }
+    
+    div.container div.form div.input div.row div.input-field {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+
 }
